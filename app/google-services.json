@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1024308728682",
+    "firebase_url": "https://sangchalo-58e07.firebaseio.com",
+    "project_id": "sangchalo-58e07",
+    "storage_bucket": "sangchalo-58e07.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1024308728682:android:762e0e12b25d451635cb13",
+        "android_client_info": {
+          "package_name": "com.example.sang_chalo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1024308728682-il1hmhsdje436i62bsfhckkribink96j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sang_chalo",
+            "certificate_hash": "461c36dbf30742bd32d46d0860dd05c5e5698002"
+          }
+        },
+        {
+          "client_id": "1024308728682-dd8t5tmb9ubuttkev989ijgctuhr4u4l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQ7vdW3NMpVK6nhkWdxR9-sqIFAjEh3M4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1024308728682-dd8t5tmb9ubuttkev989ijgctuhr4u4l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
