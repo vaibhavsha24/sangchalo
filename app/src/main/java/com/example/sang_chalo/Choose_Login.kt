@@ -30,6 +30,7 @@ class Choose_Login : AppCompatActivity(),View.OnClickListener {
     private lateinit var resendToken: PhoneAuthProvider.ForceResendingToken
     private lateinit var callbacks: PhoneAuthProvider.OnVerificationStateChangedCallbacks
 
+    //keshac
 
     private lateinit var googleSignInClient: GoogleSignInClient
 
