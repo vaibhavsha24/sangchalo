@@ -1,5 +1,13 @@
 <resources>
     <string name="app_name">Sang_Chalo</string>
     <string name="facebook_appid">197802998033113</string>
+    <string name="Firstname">First Name</string>
+    <string name="lastname">Last Name</string>
+    <string name="enteremail">Email address</string>
+    <string name="Enterphoneno">Phone number</string>
+    <string name="EnterAadharno">Aadhar number</string>
+    <string name="Femaleid">Female</string>
+    <string name="Maleid">Male</string>
+    <string name="signin">Sign in</string>
 
 </resources>
