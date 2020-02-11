@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     tools:context=".SignIn">
 
-    <TextView
+    <EditText
         android:id="@+id/first_name"
         android:layout_width="242dp"
         android:layout_height="43dp"
-        android:text="@string/Firstname"
+        android:hint="@string/Firstname"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,6 +25,7 @@
         android:layout_width="114dp"
         android:layout_height="123dp"
         android:layout_marginTop="16dp"
+        android:adjustViewBounds="true"
         android:contentDescription="@string/com_facebook_loginview_log_out_action"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -31,11 +33,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
 
-    <TextView
+    <EditText
         android:id="@+id/Last_name"
         android:layout_width="242dp"
         android:layout_height="43dp"
-        android:text="@string/lastname"
+        android:hint="@string/lastname"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -88,46 +90,28 @@
         app:layout_constraintTop_toBottomOf="@+id/Enter_phone_no."
         app:layout_constraintVertical_bias="0.011" />
 
-    <EditText
-        android:id="@+id/Genderid"
-        android:layout_width="242dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Gender"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Enter_Aadhar_no."
-        app:layout_constraintVertical_bias="0.0" />
-
     <RadioButton
         android:id="@+id/Femaleid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="@string/Femaleid"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Genderid"
-        app:layout_constraintVertical_bias="0.073" />
+        app:layout_constraintTop_toBottomOf="@+id/Enter_Aadhar_no." />
 
     <RadioButton
         android:id="@+id/Maleid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="20dp"
         android:text="@string/Maleid"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/Femaleid"
-        app:layout_constraintTop_toBottomOf="@+id/Genderid"
-        app:layout_constraintVertical_bias="0.021" />
+        app:layout_constraintTop_toBottomOf="@+id/Enter_Aadhar_no." />
 
     <Button
         android:id="@+id/Signin_buttonid"

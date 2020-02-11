@@ -137,12 +137,15 @@ class Choose_Login : AppCompatActivity(),View.OnClickListener {
             {
                phone.visibility=View.INVISIBLE
                 verificationcode.visibility=View.VISIBLE
-                startPhoneNumberVerification(phoneno)
 
-                next.setOnClickListener {
+                startActivity(Intent(this,SignIn::class.java))
 
-                    verifyPhoneNumberWithCode(storedVerificationId,verificationcode.text.toString())
-                    }
+//                startPhoneNumberVerification(phoneno)
+
+//                next.setOnClickListener {
+//
+//                    verifyPhoneNumberWithCode(storedVerificationId,verificationcode.text.toString())
+//                    }
             }
 
 
