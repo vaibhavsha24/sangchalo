@@ -9,5 +9,12 @@
     <string name="Femaleid">Female</string>
     <string name="Maleid">Male</string>
     <string name="signin">Sign in</string>
+    <string name="Gender">Gender</string>
+    <string name="Yourlocation">Your location</string>
+    <string name="Goingto">Going to...</string>
+    <string name="Getride">Get ride</string>
+    <string name="Offerride">Offer Ride</string>
+    <string name="yourlocation">Your location</string>
+    <string name="goingto">Going to...</string>
 
 </resources>
