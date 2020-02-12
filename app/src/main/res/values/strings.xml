@@ -16,5 +16,7 @@
     <string name="Offerride">Offer Ride</string>
     <string name="yourlocation">Your location</string>
     <string name="goingto">Going to...</string>
+    <string name="getride">Get ride</string>
+    <string name="offerride">offer ride</string>
 
 </resources>
