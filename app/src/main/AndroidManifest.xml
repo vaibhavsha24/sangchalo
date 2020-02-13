@@ -3,8 +3,8 @@
     package="com.example.sang_chalo">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Home"></activity>
+        <activity android:name=".Details"></activity>
+        <activity android:name=".Home" />
         <activity android:name=".SignIn" />
         <activity android:name=".Choose_Login" />
         <activity
@@ -54,7 +55,7 @@
             android:value="true" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAJXPLzaDk9SCoPBgLA0WR7oAwbnzhHEm0"/>
+            android:value="AIzaSyAJXPLzaDk9SCoPBgLA0WR7oAwbnzhHEm0" />
     </application>
 
 </manifest>

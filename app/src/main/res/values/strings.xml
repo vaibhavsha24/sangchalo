@@ -18,5 +18,14 @@
     <string name="goingto">Going to...</string>
     <string name="getride">Get ride</string>
     <string name="offerride">offer ride</string>
+    <string name="UserName">User Name</string>
+    <string name="vehicalType">Vehical type i.e(Car/Bike/Scooty)</string>
+    <string name="vehiclecompany">Vehicle company i.e.(BMW/Audi)</string>
+    <string name="vehicleName">Vehicle name</string>
+    <string name="color">Vehicle color</string>
+    <string name="vehicleNumber">Vehicle Number</string>
+    <string name="state">Enter State</string>
+    <string name="city">Enter City</string>
+    <string name="idproof">Add Driving licience</string>
 
 </resources>
