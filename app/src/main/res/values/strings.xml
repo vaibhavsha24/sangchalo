@@ -27,5 +27,9 @@
     <string name="state">Enter State</string>
     <string name="city">Enter City</string>
     <string name="idproof">Add Driving licience</string>
+    <string name="photoinput">photo input button</string>
+    <string name="RCproof">Add vehicel RC book</string>
+    <string name="RCProff">Add RC book</string>
+    <string name="confirmbutton">confirm</string>
 
 </resources>

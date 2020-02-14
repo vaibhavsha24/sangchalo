@@ -163,23 +163,62 @@
         app:layout_constraintTop_toBottomOf="@+id/EnterAddress"
         app:layout_constraintVertical_bias="0.0" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="133dp"
-        android:layout_height="101dp"
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="36dp"
+        android:adjustViewBounds="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.133"
+        app:layout_constraintHorizontal_bias="0.003"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/IDproof"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/photocamera" />
 
-        <ImageButton
-            android:id="@+id/imageButton2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:adjustViewBounds="true"
-            app:srcCompat="@drawable/camera"
-            tools:layout_editor_absoluteY="16dp" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/RcProof"
+        android:layout_width="100dp"
+        android:layout_height="28dp"
+        android:text="@string/RCProff"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.819"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EnterAddress"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="56dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.77"
+        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/RcProof"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/photocamera" />
+
+    <Button
+        android:id="@+id/confirmButton"
+        android:layout_width="176dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="96dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="@string/confirmbutton"
+        android:textColor="@color/browser_actions_bg_grey"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.412"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EnterAddress"
+        app:layout_constraintVertical_bias="0.375" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
