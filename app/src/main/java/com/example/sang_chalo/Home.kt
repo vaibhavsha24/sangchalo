@@ -1,5 +1,6 @@
 package com.example.sang_chalo
 
+import android.content.Intent
 import android.location.Geocoder
 import android.location.Location
 import android.location.LocationManager
@@ -14,6 +15,7 @@ import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 
 import com.google.android.gms.maps.model.MarkerOptions
+import kotlinx.android.synthetic.main.activity_home.*
 import java.util.*
 
 class Home : AppCompatActivity() {
@@ -26,6 +28,11 @@ class Home : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+        profile.setOnClickListener {
+
+            startActivity(Intent(this,Details::class.java))
+        }
         mapFragment = supportFragmentManager.findFragmentById(R.id.mapView) as SupportMapFragment
         mapFragment.getMapAsync(OnMapReadyCallback {
             googleMap = it
