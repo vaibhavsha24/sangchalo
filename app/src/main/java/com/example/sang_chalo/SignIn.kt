@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_choose__login.*
+import kotlinx.android.synthetic.main.activity_sign_in.*
 
 class SignIn : AppCompatActivity() {
 
@@ -11,8 +12,9 @@ class SignIn : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
 
-       // signInButton.setOnClickListener{
-       //     startActivity(Intent(this,Home::class.java))
+        Signin_buttonid.setOnClickListener{
+            startActivity(Intent(this,Home::class.java))
         }
     }
+}
 
