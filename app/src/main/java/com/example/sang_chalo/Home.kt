@@ -84,7 +84,9 @@ class Home : AppCompatActivity() {
             startActivity(Intent(this,Choose::class.java))
 
         }
-
+        Getridebutton.setOnClickListener {
+            startActivity(Intent(this,GetRide::class.java))
+        }
 
     }
 

@@ -28,7 +28,7 @@ class Choose : AppCompatActivity() {
             car.backgroundTintList= ContextCompat.getColorStateList(this, R.color.choose)
             bike.backgroundTintList= ContextCompat.getColorStateList(this, R.color.black)
 
-            image.setImageResource(R.drawable.car1)
+            image.setImageResource(R.drawable.carnew)
 
             carnoplate.hint="Car No."
             textView2.visibility= View.VISIBLE
