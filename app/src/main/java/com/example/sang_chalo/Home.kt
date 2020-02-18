@@ -80,6 +80,12 @@ class Home : AppCompatActivity() {
 
 
         })
+        Offerridebutton.setOnClickListener {
+            startActivity(Intent(this,Choose::class.java))
+
+        }
+
+
     }
 
 }

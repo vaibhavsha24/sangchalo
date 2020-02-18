@@ -2,5 +2,9 @@
 <resources>
     <color name="colorPrimary">#FF67B3</color>
     <color name="colorPrimaryDark">#ff679a</color>
-    <color name="colorAccent">#FF67B3</color>
+    <color name="colorAccent">#FF67B3</color>\
+    <color name="black">#000000</color>\
+    <color name="selct">#ffff00</color>
+    <color name="choose">#36a832</color>
+
 </resources>
