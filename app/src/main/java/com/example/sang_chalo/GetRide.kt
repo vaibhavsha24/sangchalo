@@ -1,6 +1,7 @@
 package com.example.sang_chalo
 
 import android.app.DatePickerDialog
+import android.app.TimePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_choose.*
@@ -31,6 +32,17 @@ class GetRide : AppCompatActivity() {
         }
         textView4.setOnClickListener{
             DatePickerDialog(this@GetRide, dateSetListner,c.get(Calendar.YEAR),c.get(Calendar.MONTH),c.get(Calendar.DAY_OF_MONTH)).show()
+        }
+        val timepicker=TimePickerDialog.OnTimeSetListener{timePicker, hour, minute ->
+        c.set(Calendar.HOUR_OF_DAY, hour)
+        c.set(Calendar.MINUTE, minute)
+        timeid.text = SimpleDateFormat("HH:mm").format(c.time)
+    }
+
+        timeid.setOnClickListener{
+            TimePickerDialog(this, timepicker, c.get(Calendar.HOUR_OF_DAY), c.get(Calendar.MINUTE), true).show()
+
+
         }
 
 

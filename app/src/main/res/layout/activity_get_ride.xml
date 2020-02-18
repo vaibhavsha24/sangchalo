@@ -10,37 +10,42 @@
         android:id="@+id/guideline22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent=".05"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="37dp" />
 
-    <EditText
+    <TextView
         android:id="@+id/editText"
-        android:layout_width="297dp"
-        android:layout_height="67dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="From location"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guideline22"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@id/guideline23"
-        tools:layout_editor_absoluteX="62dp" />
+        app:layout_constraintStart_toStartOf="@id/guideline22"
+        app:layout_constraintTop_toTopOf="@+id/guideline24" />
 
-    <EditText
+    <TextView
         android:id="@+id/editText2"
-        android:layout_width="297dp"
-        android:layout_height="55dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="To location"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@id/guideline23"
         app:layout_constraintStart_toStartOf="@id/guideline22"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline23"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        app:layout_constraintGuide_percent=".95"
         app:layout_constraintGuide_begin="388dp" />
 
     <CheckBox
@@ -112,40 +117,83 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/ConfirmAgainButton"
-        android:layout_width="297dp"
-        android:layout_height="55dp"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/round_button"
         android:backgroundTint="@color/colorPrimary"
         android:text="Get a ride"
         android:textColor="@color/browser_actions_bg_grey"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/guideline23"
         app:layout_constraintStart_toStartOf="@id/guideline22"
         app:layout_constraintTop_toBottomOf="@+id/timeid" />
 
-    <EditText
+    <TextView
         android:id="@+id/timeid"
-        android:layout_width="297dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Time"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox7"
-        tools:layout_editor_absoluteX="85dp"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@id/guideline23"
         app:layout_constraintStart_toStartOf="@id/guideline22"
-        app:layout_constraintEnd_toStartOf="@id/guideline23"/>
+        app:layout_constraintTop_toBottomOf="@+id/checkBox7" />
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="297dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="25dp"
         android:text="Click to set DATE"
+        android:textAlignment="center"
         android:textColor="@color/colorPrimary"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline23"
         app:layout_constraintHorizontal_bias="0.561"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintStart_toStartOf="@+id/guideline22"
+        app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline24"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="-170dp"
+        app:layout_constraintGuide_percent=".10" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toStartOf="@+id/guideline22"
+        app:layout_constraintTop_toTopOf="@+id/guideline24"
+        app:srcCompat="@drawable/fromlocation" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toStartOf="@+id/guideline22"
+        app:layout_constraintTop_toBottomOf="@+id/imageView9"
+        app:srcCompat="@drawable/to" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/imageView10"
+        app:srcCompat="@drawable/calendar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
