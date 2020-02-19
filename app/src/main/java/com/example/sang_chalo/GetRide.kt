@@ -2,6 +2,7 @@ package com.example.sang_chalo
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_choose.*
@@ -45,6 +46,10 @@ class GetRide : AppCompatActivity() {
 
         }
 
+        ConfirmAgainButton.setOnClickListener {
+            startActivity(Intent(this, AllRides::class.java))
+
+        }
 
 
     }
