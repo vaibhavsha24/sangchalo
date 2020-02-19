@@ -47,6 +47,10 @@ class Home : AppCompatActivity() {
 
             startActivity(Intent(this,Details::class.java))
         }
+        myride.setOnClickListener {
+
+            startActivity(Intent(this,Myride::class.java))
+        }
         mapFragment = supportFragmentManager.findFragmentById(R.id.mapView) as SupportMapFragment
         mapFragment.getMapAsync(OnMapReadyCallback {
             googleMap = it

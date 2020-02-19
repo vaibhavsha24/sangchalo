@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AllRides"></activity>
+        <activity android:name=".Myride"></activity>
+        <activity android:name=".AllRides" />
         <activity android:name=".GetRide" />
         <activity android:name=".Choose" />
         <activity android:name=".Details" />

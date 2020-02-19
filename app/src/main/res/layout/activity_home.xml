@@ -150,4 +150,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/myride"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="352dp"
+        android:layout_marginTop="608dp"
+        android:src="@drawable/profile"
+
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
