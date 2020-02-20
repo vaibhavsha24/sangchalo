@@ -5,15 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.myride.view.*
-import kotlinx.android.synthetic.main.myride.view.*
-import kotlinx.android.synthetic.main.myride.view.From
-import kotlinx.android.synthetic.main.myride.view.time
-import kotlinx.android.synthetic.main.myride.view.to
-import kotlinx.android.synthetic.main.myride.view.date
 
 import kotlin.to
 
-class myrideAdapter(val myride: ArrayList<myrideclass>) : RecyclerView.Adapter<myrideAdapter.ViewHolder>() {
+class myrideAdapter(val myride: ArrayList<Myrideclass>) : RecyclerView.Adapter<myrideAdapter.ViewHolder>() {
 
 
     private var mListener: OnItemClickListener? = null
@@ -50,15 +45,15 @@ class myrideAdapter(val myride: ArrayList<myrideclass>) : RecyclerView.Adapter<m
     //the class is hodling the list view
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun bindItems(rider: myrideclass,listener:OnItemClickListener) {
+        fun bindItems(rider: Myrideclass,listener:OnItemClickListener) {
 
-            itemView.From.text=rider.from
+            itemView.Fromride.text=rider.from
 
-            itemView.to.text=rider.to
+            itemView.tomride.text=rider.to
 
-            itemView.date.text=rider.date
+            itemView.datemride.text=rider.date
 
-            itemView.time.text=rider.time
+            itemView.timemride.text=rider.time
 
         }
 

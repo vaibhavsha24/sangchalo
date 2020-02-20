@@ -16,8 +16,8 @@ class Myride : AppCompatActivity() {
 
 
 
-    var myride=ArrayList<myrideclass>()
-    var ride=myrideclass()
+    var myride=ArrayList<Myrideclass>()
+    var ride=Myrideclass()
 
     //ride.ridername="Vaibhav"
 

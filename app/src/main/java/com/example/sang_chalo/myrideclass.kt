@@ -1,6 +1,6 @@
 package com.example.sang_chalo
 
-class myrideclass {
+class Myrideclass {
 
     var from=""
     var to=""

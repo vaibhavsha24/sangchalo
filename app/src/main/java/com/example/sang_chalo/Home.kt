@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.google.android.gms.common.api.Status
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -21,6 +22,13 @@ import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.libraries.places.api.Places
+import com.google.android.libraries.places.api.model.Place
+import com.google.android.libraries.places.widget.Autocomplete
+import com.google.android.libraries.places.widget.AutocompleteActivity
+import com.google.android.libraries.places.widget.AutocompleteSupportFragment
+import com.google.android.libraries.places.widget.listener.PlaceSelectionListener
+import com.google.android.libraries.places.widget.model.AutocompleteActivityMode
 import kotlinx.android.synthetic.main.activity_home.*
 import java.util.*
 
@@ -28,14 +36,13 @@ class Home : AppCompatActivity() {
    lateinit var mapFragment : SupportMapFragment
     lateinit var googleMap: GoogleMap
     private val REQUEST_CODE_ASK_PERMISSIONS = 1
-
     private val RUNTIME_PERMISSIONS = arrayOf(
         Manifest.permission.ACCESS_FINE_LOCATION,
         Manifest.permission.WRITE_EXTERNAL_STORAGE,
         Manifest.permission.INTERNET,
         Manifest.permission.ACCESS_WIFI_STATE,
         Manifest.permission.ACCESS_NETWORK_STATE)
-
+var AUTOCOMPLETE_REQUEST_CODE=2
     lateinit var locationManager: LocationManager
     private lateinit var fusedLocationClient: FusedLocationProviderClient
 
@@ -47,6 +54,10 @@ class Home : AppCompatActivity() {
 
             startActivity(Intent(this,Details::class.java))
         }
+            Places.initialize(getApplicationContext(), "AIzaSyAJXPLzaDk9SCoPBgLA0WR7oAwbnzhHEm0");
+
+   // Create a new Places client instance.
+   var  placesClient = Places.createClient(this);
         myride.setOnClickListener {
 
             startActivity(Intent(this,Myride::class.java))
@@ -100,6 +111,22 @@ class Home : AppCompatActivity() {
 
 
         })
+//        var autocompleteFragment = AutocompleteSupportFragment()
+//        getSupportFragmentManager().findFragmentById(R.id.autocomplete_fragment);
+//
+//        autocompleteFragment.setPlaceFields(Arrays.asList(Place.Field.ID, Place.Field.NAME));
+//
+//        autocompleteFragment.setOnPlaceSelectedListener(object: PlaceSelectionListener {
+//
+//            override fun onPlaceSelected( place:Place) {
+//                // TODO: Get info about the selected place.
+//            }
+//
+//           override fun onError( status:Status) {
+//                // TODO: Handle the error.
+//            }
+//        });
+
         Offerridebutton.setOnClickListener {
             startActivity(Intent(this,Choose::class.java))
 
@@ -107,7 +134,17 @@ class Home : AppCompatActivity() {
         Getridebutton.setOnClickListener {
             startActivity(Intent(this,GetRide::class.java))
         }
+       var fields = Arrays.asList(Place.Field.ID, Place.Field.NAME) as  List<Place.Field>
+// Start the autocomplete intent.
 
+        Fromid.setOnClickListener {
+
+            var intent =  Autocomplete.IntentBuilder(
+                AutocompleteActivityMode.FULLSCREEN, fields)
+                .build(this);
+            startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE);
+
+        }
     }
 
     private fun requestPermissions() {
@@ -132,5 +169,18 @@ class Home : AppCompatActivity() {
 
         return RUNTIME_PERMISSIONS.count { !it.permissionGranted(this) } == 0
     }
+override fun onActivityResult( requestCode:Int,  resultCode:Int,  data:Intent?) {
+    if (requestCode == AUTOCOMPLETE_REQUEST_CODE) {
+        if (resultCode == RESULT_OK) {
+            var place = Autocomplete.getPlaceFromIntent(data!!);
+        } else if (resultCode == AutocompleteActivity.RESULT_ERROR) {
+            // TODO: Handle the error.
+            var status = Autocomplete.getStatusFromIntent(data!!    );
+println(status)
 
+        } else if (resultCode == RESULT_CANCELED) {
+            // The user canceled the operation.
+        }
+    }
+}
 }

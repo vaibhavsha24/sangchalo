@@ -10,7 +10,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <TextView
-        android:id="@+id/date"
+        android:id="@+id/datemride"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
@@ -61,10 +61,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/Status"
-        app:layout_constraintTop_toBottomOf="@+id/date" />
+        app:layout_constraintTop_toBottomOf="@+id/datemride" />
 
     <TextView
-        android:id="@+id/From"
+        android:id="@+id/Fromride"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
@@ -75,17 +75,17 @@
         app:layout_constraintTop_toBottomOf="@+id/ridername" />
 
     <TextView
-        android:id="@+id/to"
+        android:id="@+id/tomride"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:text="TextView"
         android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="@+id/From"
-        app:layout_constraintTop_toBottomOf="@+id/From" />
+        app:layout_constraintStart_toStartOf="@+id/Fromride"
+        app:layout_constraintTop_toBottomOf="@+id/Fromride" />
 
     <TextView
-        android:id="@+id/time"
+        android:id="@+id/timemride"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"

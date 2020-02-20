@@ -45,6 +45,7 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:ems="10"
+
             android:hint="@string/yourlocation"
             android:inputType="textPersonName"
             app:layout_constraintBottom_toTopOf="@+id/Toid"
@@ -154,13 +155,12 @@
         android:id="@+id/myride"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="352dp"
-        android:layout_marginTop="608dp"
-        android:src="@drawable/profile"
+        android:src="@drawable/car1"
 
         app:civ_border_color="#FF000000"
         app:civ_border_width="2dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
