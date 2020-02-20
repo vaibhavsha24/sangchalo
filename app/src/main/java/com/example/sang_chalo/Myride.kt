@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_all_rides.*
+import kotlinx.android.synthetic.main.activity_myride.*
 import kotlinx.android.synthetic.main.myride.view.*
 
 class Myride : AppCompatActivity() {
@@ -53,9 +54,9 @@ class Myride : AppCompatActivity() {
         }
     })
 
-    ridesrecycle.adapter=rideAdapter
+        myriderecycle.adapter=rideAdapter
 
-    ridesrecycle.layoutManager= LinearLayoutManager(this)
+        myriderecycle.layoutManager= LinearLayoutManager(this)
 
 
 
