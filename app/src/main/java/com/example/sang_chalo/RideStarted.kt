@@ -1,39 +1,27 @@
 package com.example.sang_chalo
 
 import android.Manifest
-import android.content.Context
+import android.app.DownloadManager
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.location.Geocoder
 import android.location.Location
 import android.location.LocationManager
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
-import com.google.android.gms.common.api.Status
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationServices
-
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.libraries.places.api.Places
-import com.google.android.libraries.places.api.model.Place
-import com.google.android.libraries.places.widget.Autocomplete
-import com.google.android.libraries.places.widget.AutocompleteActivity
-import com.google.android.libraries.places.widget.AutocompleteSupportFragment
-import com.google.android.libraries.places.widget.listener.PlaceSelectionListener
-import com.google.android.libraries.places.widget.model.AutocompleteActivityMode
-import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.activity_ride_started.*
 import java.util.*
 
-class Home : AppCompatActivity() {
-   lateinit var mapFragment : SupportMapFragment
+class RideStarted : AppCompatActivity() {
+    lateinit var mapFragment : SupportMapFragment
     lateinit var googleMap: GoogleMap
     private val REQUEST_CODE_ASK_PERMISSIONS = 1
     private val RUNTIME_PERMISSIONS = arrayOf(
@@ -42,30 +30,19 @@ class Home : AppCompatActivity() {
         Manifest.permission.INTERNET,
         Manifest.permission.ACCESS_WIFI_STATE,
         Manifest.permission.ACCESS_NETWORK_STATE)
-var AUTOCOMPLETE_REQUEST_CODE=2
+    var AUTOCOMPLETE_REQUEST_CODE=2
     lateinit var locationManager: LocationManager
     private lateinit var fusedLocationClient: FusedLocationProviderClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
-        requestPermissions()
-        profile.setOnClickListener {
+        setContentView(R.layout.activity_ride_started)
 
-            startActivity(Intent(this,Details::class.java))
-        }
+        Places.initialize(getApplicationContext(), "AIzaSyAJXPLzaDk9SCoPBgLA0WR7oAwbnzhHEm0");
 
-
-
-            Places.initialize(getApplicationContext(), "AIzaSyAJXPLzaDk9SCoPBgLA0WR7oAwbnzhHEm0");
-
-   // Create a new Places client instance.
-   var  placesClient = Places.createClient(this);
-        myride.setOnClickListener {
-
-            startActivity(Intent(this,Myride::class.java))
-        }
-        mapFragment = supportFragmentManager.findFragmentById(R.id.mapView) as SupportMapFragment
+        // Create a new Places client instance.
+        var  placesClient = Places.createClient(this);
+        mapFragment = supportFragmentManager.findFragmentById(R.id.mapView2) as SupportMapFragment
         mapFragment.getMapAsync(OnMapReadyCallback {
             googleMap = it
             googleMap.isMyLocationEnabled = true
@@ -130,61 +107,8 @@ var AUTOCOMPLETE_REQUEST_CODE=2
 //            }
 //        });
 
-        Offerridebutton.setOnClickListener {
-            startActivity(Intent(this,Choose::class.java))
-
-        }
-        Getridebutton.setOnClickListener {
-            startActivity(Intent(this,GetRide::class.java))
-        }
-       var fields = Arrays.asList(Place.Field.ID, Place.Field.NAME) as  List<Place.Field>
-// Start the autocomplete intent.
-
-        Fromid.setOnClickListener {
-
-            var intent =  Autocomplete.IntentBuilder(
-                AutocompleteActivityMode.FULLSCREEN, fields)
-                .build(this);
-            startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE);
-
-        }
-
-    }
-
-    private fun requestPermissions() {
-        if (!hasPermissions()) {
-            ActivityCompat.requestPermissions(this,
-                RUNTIME_PERMISSIONS, REQUEST_CODE_ASK_PERMISSIONS)
-        } else {
-
+        endrides.setOnClickListener {
+            startActivity(Intent(this,EndRide::class.java))
         }
     }
-    private fun String.permissionGranted(ctx: Context) =
-        ContextCompat.checkSelfPermission(ctx, this) == PackageManager.PERMISSION_GRANTED
-
-    private fun hasPermissions(): Boolean {
-        /**
-         * Only when the app's target SDK is 23 or higher, it requests each dangerous permissions it
-         * needs when the app is running.
-         */
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-            return true
-        }
-
-        return RUNTIME_PERMISSIONS.count { !it.permissionGranted(this) } == 0
-    }
-override fun onActivityResult( requestCode:Int,  resultCode:Int,  data:Intent?) {
-    if (requestCode == AUTOCOMPLETE_REQUEST_CODE) {
-        if (resultCode == RESULT_OK) {
-            var place = Autocomplete.getPlaceFromIntent(data!!);
-        } else if (resultCode == AutocompleteActivity.RESULT_ERROR) {
-            // TODO: Handle the error.
-            var status = Autocomplete.getStatusFromIntent(data!!    );
-println(status)
-
-        } else if (resultCode == RESULT_CANCELED) {
-            // The user canceled the operation.
-        }
-    }
-}
 }

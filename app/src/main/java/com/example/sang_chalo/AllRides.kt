@@ -1,10 +1,12 @@
 package com.example.sang_chalo
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.AdapterView
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_all_rides.*
+import kotlinx.android.synthetic.main.riderequest.*
 
 class AllRides : AppCompatActivity() {
 private lateinit var rideAdapter:RideAdapter
@@ -34,6 +36,10 @@ private lateinit var rideAdapter:RideAdapter
 
         ridelist.add(ride1)
 
+        bookride.setOnClickListener {
+            startActivity(Intent(this,RideStarted::class.java))
+        }
+
 
         rideAdapter= RideAdapter(ridelist)
         rideAdapter.setOnItemClickListener(object:RideAdapter.OnItemClickListener{
@@ -51,6 +57,9 @@ private lateinit var rideAdapter:RideAdapter
         ridesrecycle.adapter=rideAdapter
 
         ridesrecycle.layoutManager=LinearLayoutManager(this)
+
+
+
 
 
 
