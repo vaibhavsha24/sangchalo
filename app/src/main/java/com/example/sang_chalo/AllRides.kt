@@ -36,9 +36,9 @@ private lateinit var rideAdapter:RideAdapter
 
         ridelist.add(ride1)
 
-        bookride.setOnClickListener {
-            startActivity(Intent(this,RideStarted::class.java))
-        }
+       // bookride.setOnClickListener {
+       //     startActivity(Intent(this,RideStarted::class.java))
+       // }
 
 
         rideAdapter= RideAdapter(ridelist)

@@ -52,7 +52,7 @@ var AUTOCOMPLETE_REQUEST_CODE=2
         requestPermissions()
         profile.setOnClickListener {
 
-            startActivity(Intent(this,Details::class.java))
+            startActivity(Intent(this,RideStarted::class.java))
         }
 
 

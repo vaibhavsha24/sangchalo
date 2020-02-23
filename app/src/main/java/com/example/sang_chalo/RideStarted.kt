@@ -21,8 +21,8 @@ import kotlinx.android.synthetic.main.activity_ride_started.*
 import java.util.*
 
 class RideStarted : AppCompatActivity() {
-    lateinit var mapFragment : SupportMapFragment
-    lateinit var googleMap: GoogleMap
+    lateinit var mapFragment1 : SupportMapFragment
+    lateinit var googleMap1: GoogleMap
     private val REQUEST_CODE_ASK_PERMISSIONS = 1
     private val RUNTIME_PERMISSIONS = arrayOf(
         Manifest.permission.ACCESS_FINE_LOCATION,
@@ -31,8 +31,8 @@ class RideStarted : AppCompatActivity() {
         Manifest.permission.ACCESS_WIFI_STATE,
         Manifest.permission.ACCESS_NETWORK_STATE)
     var AUTOCOMPLETE_REQUEST_CODE=2
-    lateinit var locationManager: LocationManager
-    private lateinit var fusedLocationClient: FusedLocationProviderClient
+    lateinit var locationManager1: LocationManager
+    private lateinit var fusedLocationClient1: FusedLocationProviderClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,10 +42,10 @@ class RideStarted : AppCompatActivity() {
 
         // Create a new Places client instance.
         var  placesClient = Places.createClient(this);
-        mapFragment = supportFragmentManager.findFragmentById(R.id.mapView2) as SupportMapFragment
-        mapFragment.getMapAsync(OnMapReadyCallback {
-            googleMap = it
-            googleMap.isMyLocationEnabled = true
+        mapFragment1 = supportFragmentManager.findFragmentById(R.id.mapView2) as SupportMapFragment
+        mapFragment1.getMapAsync(OnMapReadyCallback {
+            googleMap1 = it
+            googleMap1.isMyLocationEnabled = true
 
 //            val location1 = LatLng(13.03,77.60)
 //            googleMap.addMarker(MarkerOptions().position(location1).title("My Location"))
@@ -59,16 +59,16 @@ class RideStarted : AppCompatActivity() {
 //            googleMap.addMarker(MarkerOptions().position(location3).title("Bangalore"))
 
 
-            locationManager = getSystemService(LOCATION_SERVICE) as LocationManager
-            fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
-            fusedLocationClient.lastLocation
+            locationManager1 = getSystemService(LOCATION_SERVICE) as LocationManager
+            fusedLocationClient1 = LocationServices.getFusedLocationProviderClient(this)
+            fusedLocationClient1.lastLocation
                 .addOnSuccessListener { location: Location? ->
                     // Got last known location. In some rare situations this can be null.
                     if(location!=null) {
                         val currentloc = LatLng(location!!.latitude, location!!.longitude)
-                        googleMap.addMarker(MarkerOptions().position(currentloc).title("Current Location"))
+                        googleMap1.addMarker(MarkerOptions().position(currentloc).title("Current Location"))
 
-                        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentloc,12f))
+                        googleMap1.animateCamera(CameraUpdateFactory.newLatLngZoom(currentloc,12f))
 
 
                         var geocoder = Geocoder(this, Locale.getDefault())
