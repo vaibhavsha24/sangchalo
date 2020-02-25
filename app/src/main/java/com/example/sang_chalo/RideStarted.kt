@@ -1,6 +1,7 @@
 package com.example.sang_chalo
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.app.DownloadManager
 import android.content.Intent
 import android.graphics.Color
@@ -31,6 +32,7 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 
 import com.google.android.gms.maps.model.Polyline
+import kotlin.collections.ArrayList
 
 
 class RideStarted : AppCompatActivity() {
@@ -74,19 +76,24 @@ class RideStarted : AppCompatActivity() {
 //
 //            val location3 = LatLng(13.00,77.00)
 //            googleMap.addMarker(MarkerOptions().position(location3).title("Bangalore"))
-
-
+            val location1 = LatLng(26.8595,75.7664)
+            googleMap1.addMarker(MarkerOptions().position(location1).title("Maiet"))
+            var  currentloc:LatLng?=null
             locationManager1 = getSystemService(LOCATION_SERVICE) as LocationManager
             fusedLocationClient1 = LocationServices.getFusedLocationProviderClient(this)
             fusedLocationClient1.lastLocation
                 .addOnSuccessListener { location: Location? ->
                     // Got last known location. In some rare situations this can be null.
                     if(location!=null) {
-                        val currentloc = LatLng(location!!.latitude, location!!.longitude)
-                        googleMap1.addMarker(MarkerOptions().position(currentloc).title("Current Location"))
+                         currentloc = LatLng(location!!.latitude, location!!.longitude)
+                        googleMap1.addMarker(MarkerOptions().position(currentloc!!).title("Current Location"))
 
-//                        googleMap1.animateCamera(CameraUpdateFactory.newLatLngZoom(currentloc,12f))
+                        googleMap1.animateCamera(CameraUpdateFactory.newLatLngZoom(currentloc,10f))
 
+                        Log.d("GoogleMap", "before URL")
+                        val URL = getDirectionURL(location1,currentloc!!)
+                        Log.d("GoogleMap", "URL : $URL")
+                        GetDirection(URL).execute()
                         var geocoder = Geocoder(this, Locale.getDefault())
                         var addresses = geocoder.getFromLocation(location!!.latitude, location!!.longitude, 1)
                         var address = ""
@@ -105,33 +112,29 @@ class RideStarted : AppCompatActivity() {
 
                 }
 
-            val location1 = LatLng(13.0356745,77.5881522)
-            googleMap1.addMarker(MarkerOptions().position(location1).title("My Location"))
-            googleMap1.animateCamera(CameraUpdateFactory.newLatLngZoom(location1,5f))
+
+//            googleMap1.animateCamera(CameraUpdateFactory.newLatLngZoom(location1,5f))
 
             Log.d("GoogleMap", "before location2")
-            val location2 = LatLng(9.89,78.11)
-            googleMap1.addMarker(MarkerOptions().position(location2).title("Madurai"))
+//            val location2 = LatLng(9.89,78.11)
+//            googleMap1.addMarker(MarkerOptions().position(location2).title("Madurai"))
+//
+//            Log.d("GoogleMap", "before location3")
+//
+//            val location3 = LatLng(13.029727,77.5933021)
+//            googleMap1.addMarker(MarkerOptions().position(location3).title("Bangalore"))
 
-            Log.d("GoogleMap", "before location3")
-
-            val location3 = LatLng(13.029727,77.5933021)
-            googleMap1.addMarker(MarkerOptions().position(location3).title("Bangalore"))
-
-            Log.d("GoogleMap", "before URL")
-            val URL = getDirectionURL(location1,location3)
-            Log.d("GoogleMap", "URL : $URL")
-            GetDirection(URL).execute()
         })
 //
     }
 
 
     fun getDirectionURL(origin:LatLng,dest:LatLng) : String{
-        return "https://maps.googleapis.com/maps/api/directions/json?origin=${origin.latitude},${origin.longitude}&destination=${dest.latitude},${dest.longitude}&sensor=false&mode=driving"
+            return "https://maps.googleapis.com/maps/api/directions/json?origin=${origin.latitude},${origin.longitude}&destination=${dest.latitude},${dest.longitude}&key=AIzaSyAJXPLzaDk9SCoPBgLA0WR7oAwbnzhHEm0&sensor=false&mode=driving"
     }
 
 
+    @SuppressLint("StaticFieldLeak")
     private inner class GetDirection(val url : String) : AsyncTask<Void,Void,List<List<LatLng>>>(){
         override fun doInBackground(vararg params: Void?): List<List<LatLng>> {
             val client = OkHttpClient()
@@ -162,6 +165,7 @@ class RideStarted : AppCompatActivity() {
         }
 
         override fun onPostExecute(result: List<List<LatLng>>) {
+
             val lineoption = PolylineOptions()
             for (i in result.indices){
                 lineoption.addAll(result[i])
@@ -169,8 +173,11 @@ class RideStarted : AppCompatActivity() {
                 lineoption.color(Color.BLUE)
                 lineoption.geodesic(true)
             }
+            println("here on post execute")
             googleMap1.addPolyline(lineoption)
+
         }
+
     }
 
      fun decodePolyline(encoded: String): List<LatLng> {
@@ -208,5 +215,10 @@ class RideStarted : AppCompatActivity() {
         }
 
         return poly
+    }
+    fun dothis()
+    {
+
+
     }
 }

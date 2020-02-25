@@ -10,6 +10,9 @@ import android.location.LocationManager
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
+import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.google.android.gms.common.api.Status
@@ -139,11 +142,54 @@ var AUTOCOMPLETE_REQUEST_CODE=2
         }
        var fields = Arrays.asList(Place.Field.ID, Place.Field.NAME) as  List<Place.Field>
 // Start the autocomplete intent.
+            Fromid.addTextChangedListener(object:TextWatcher{
+
+                override fun afterTextChanged(p0: Editable?) {
+
+                }
+
+                override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                }
+
+                override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                    var intent =  Autocomplete.IntentBuilder(
+                        AutocompleteActivityMode.OVERLAY, fields)
+                        .build(this@Home);
+                    startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE);
+
+                }
+            })
 
         Fromid.setOnClickListener {
 
             var intent =  Autocomplete.IntentBuilder(
-                AutocompleteActivityMode.FULLSCREEN, fields)
+                AutocompleteActivityMode.OVERLAY, fields)
+                .build(this);
+            startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE);
+
+        }
+        Toid.addTextChangedListener(object:TextWatcher{
+
+            override fun afterTextChanged(p0: Editable?) {
+
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                var intent =  Autocomplete.IntentBuilder(
+                    AutocompleteActivityMode.OVERLAY, fields)
+                    .build(this@Home);
+                startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE);
+
+            }
+        })
+
+        Toid.setOnClickListener {
+
+            var intent =  Autocomplete.IntentBuilder(
+                AutocompleteActivityMode.OVERLAY, fields)
                 .build(this);
             startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE);
 
@@ -177,6 +223,9 @@ override fun onActivityResult( requestCode:Int,  resultCode:Int,  data:Intent?) 
     if (requestCode == AUTOCOMPLETE_REQUEST_CODE) {
         if (resultCode == RESULT_OK) {
             var place = Autocomplete.getPlaceFromIntent(data!!);
+
+            Toast.makeText(this,place.name.toString(),Toast.LENGTH_LONG).show()
+
         } else if (resultCode == AutocompleteActivity.RESULT_ERROR) {
             // TODO: Handle the error.
             var status = Autocomplete.getStatusFromIntent(data!!    );
