@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.shitij.goyal.slidebutton.SwipeButton
+import kotlinx.android.synthetic.main.activity_end_ride.*
 import kotlinx.android.synthetic.main.activity_myride.*
 import kotlinx.android.synthetic.main.endrides.*
 
@@ -19,9 +20,6 @@ class EndRide : AppCompatActivity() {
         setContentView(R.layout.activity_end_ride)
 
 
-        swipeend.setOnStateChangeListener {
-            startActivity(Intent(this,RideStarted::class.java))
-        }
 
 
         var EndRide=ArrayList<endrideclass>()
@@ -64,9 +62,9 @@ class EndRide : AppCompatActivity() {
             }
         })
 
-        myriderecycle.adapter=rideAdapter
+        endriderecycler.adapter=rideAdapter
 
-        myriderecycle.layoutManager= LinearLayoutManager(this)
+        endriderecycler.layoutManager= LinearLayoutManager(this)
 
 
     }

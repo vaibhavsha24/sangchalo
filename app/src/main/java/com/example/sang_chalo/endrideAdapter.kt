@@ -1,10 +1,13 @@
 package com.example.sang_chalo
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.endrides.*
 import kotlinx.android.synthetic.main.endrides.view.*
+import kotlinx.android.synthetic.main.endrides.view.swipeend
 import kotlinx.android.synthetic.main.riderequest.view.*
 
 class endrideAdapter(val EndRide: ArrayList<endrideclass>) : RecyclerView.Adapter<endrideAdapter.ViewHolder>() {
@@ -45,15 +48,19 @@ class endrideAdapter(val EndRide: ArrayList<endrideclass>) : RecyclerView.Adapte
 
             fun bindItems(rider: endrideclass,listener:OnItemClickListener) {
 
-                itemView.From.text=rider.from
+                itemView.fromlocation.text=rider.from
 
-                itemView.to.text=rider.to
+                itemView.tolocation.text=rider.to
 
-                itemView.totalkm.text=rider.totalkm
-                itemView.rate.text=rider.rate
+                itemView.kmid.text=rider.totalkm
+                itemView.rateperkm.text=rider.rate
                 itemView.totalfare.text=rider.totalfare
+                itemView.swipeend.setOnStateChangeListener {
+                    itemView.context.startActivity(Intent(itemView.context,RideStarted::class.java))
+                }
 
-               // itemView.time.text=rider.time
+
+                // itemView.time.text=rider.time
 
             }
 
