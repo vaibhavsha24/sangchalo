@@ -115,9 +115,11 @@
         android:layout_marginStart="64dp"
         android:layout_marginTop="16dp"
         android:background="@color/colorPrimary"
+        android:backgroundTint="@color/colorPrimary"
         app:after_confirmation_background="@color/choose"
         app:button_confirm_text="Ride ended!"
         app:inner_text="SWIPE TO END RIDE"
+        app:inner_text_background="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/totalfare" />
 
