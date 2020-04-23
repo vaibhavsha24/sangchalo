@@ -31,5 +31,8 @@
     <string name="RCproof">Add vehicel RC book</string>
     <string name="RCProff">Add RC book</string>
     <string name="confirmbutton">confirm</string>
+    <string name="title_activity_status">status</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
 
 </resources>

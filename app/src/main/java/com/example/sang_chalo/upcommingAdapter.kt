@@ -4,15 +4,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.myride.view.*
+import kotlinx.android.synthetic.main.pastride.view.*
+import kotlinx.android.synthetic.main.pastride.view.Statusid
+import kotlinx.android.synthetic.main.pastride.view.datemid
+import kotlinx.android.synthetic.main.pastride.view.timeid
+import kotlinx.android.synthetic.main.pastride.view.toid
+import kotlinx.android.synthetic.main.upcomming.view.*
 
-class myrideAdapter(val myride: ArrayList<Myrideclass>) : RecyclerView.Adapter<myrideAdapter.ViewHolder>() {
+class upcommingAdapter(val upcomming: ArrayList<upcommingclass>) : RecyclerView.Adapter<upcommingAdapter.ViewHolder>() {
 
 
     private var mListener: OnItemClickListener? = null
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindItems(myride[position],mListener!!)
+        holder.bindItems(upcomming[position],mListener!!)
 
     }
     fun setOnItemClickListener(listener: OnItemClickListener) {
@@ -29,7 +34,7 @@ class myrideAdapter(val myride: ArrayList<Myrideclass>) : RecyclerView.Adapter<m
 
     //this method is returning the view for each item in the list
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.myride, parent, false)
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.upcomming, parent, false)
         return ViewHolder(v)
     }
 
@@ -37,21 +42,25 @@ class myrideAdapter(val myride: ArrayList<Myrideclass>) : RecyclerView.Adapter<m
 
     //this method is giving the size of the list
     override fun getItemCount(): Int {
-        return myride.size
+        return upcomming.size
     }
 
     //the class is hodling the list view
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun bindItems(rider: Myrideclass,listener:OnItemClickListener) {
+        fun bindItems(ride: upcommingclass,listener:OnItemClickListener) {
 
-            itemView.Fromride.text=rider.from
+            itemView.Fromid.text=ride.from
 
-            itemView.tomride.text=rider.to
+            itemView.toid.text=ride.to
 
-            itemView.datemid.text=rider.date
+            itemView.datemid.text=ride.date
 
-            itemView.timemride.text=rider.time
+            itemView.timeid.text=ride.time
+
+            itemView.estimatedamount.text=ride.estimatedamount
+            itemView.Statusid.text=ride.status
+            itemView.nameid.text=ride.name
 
         }
 

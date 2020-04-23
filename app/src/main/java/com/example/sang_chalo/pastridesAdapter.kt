@@ -4,15 +4,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.myride.view.*
+import kotlinx.android.synthetic.main.pastride.view.*
+import kotlinx.android.synthetic.main.pastride.view.datemid
+import kotlinx.android.synthetic.main.pastride.view.*
 
-class myrideAdapter(val myride: ArrayList<Myrideclass>) : RecyclerView.Adapter<myrideAdapter.ViewHolder>() {
+class pastridesAdapter(val pastrides: ArrayList<pastridesclass>) : RecyclerView.Adapter<pastridesAdapter.ViewHolder>() {
 
 
     private var mListener: OnItemClickListener? = null
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindItems(myride[position],mListener!!)
+        holder.bindItems(pastrides[position],mListener!!)
 
     }
     fun setOnItemClickListener(listener: OnItemClickListener) {
@@ -29,7 +31,7 @@ class myrideAdapter(val myride: ArrayList<Myrideclass>) : RecyclerView.Adapter<m
 
     //this method is returning the view for each item in the list
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.myride, parent, false)
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.pastride, parent, false)
         return ViewHolder(v)
     }
 
@@ -37,21 +39,25 @@ class myrideAdapter(val myride: ArrayList<Myrideclass>) : RecyclerView.Adapter<m
 
     //this method is giving the size of the list
     override fun getItemCount(): Int {
-        return myride.size
+        return pastrides.size
     }
 
     //the class is hodling the list view
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun bindItems(rider: Myrideclass,listener:OnItemClickListener) {
+        fun bindItems(ride: pastridesclass,listener:OnItemClickListener) {
 
-            itemView.Fromride.text=rider.from
+            itemView.Fromid.text=ride.from
 
-            itemView.tomride.text=rider.to
+            itemView.toid.text=ride.to
 
-            itemView.datemid.text=rider.date
+            itemView.datemid.text=ride.date
 
-            itemView.timemride.text=rider.time
+            itemView.timeid.text=ride.time
+
+            itemView.Amountid.text=ride.Amount
+            itemView.Statusid.text=ride.status
+            itemView.nameid.text=ride.name
 
         }
 
