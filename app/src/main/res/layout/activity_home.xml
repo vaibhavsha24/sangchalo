@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     tools:context=".Home">
 
     <fragment
@@ -140,6 +141,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile"
         android:layout_width="50dp"
@@ -151,16 +153,81 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/myride"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/car1"
-
-        app:civ_border_color="#FF000000"
-        app:civ_border_width="2dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatoption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="30dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        fab:srcCompat="@android:drawable/ic_input_add" />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/pastride"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="30dp"
+        android:clickable="true"
+        android:visibility="invisible"
+
+        app:layout_constraintBottom_toTopOf="@+id/floatoption"
+        app:layout_constraintEnd_toEndOf="parent"
+        fab:srcCompat="@drawable/car"/>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/upcomingride"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="30dp"
+        android:visibility="invisible"
+
+        android:clickable="true"
+        app:layout_constraintBottom_toTopOf="@+id/pastride"
+        app:layout_constraintEnd_toEndOf="parent"
+        fab:srcCompat="@drawable/car" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/f2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+
+        android:layout_marginBottom="30dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toTopOf="@+id/upcomingride"
+        app:layout_constraintEnd_toEndOf="parent"
+        fab:srcCompat="@drawable/car" />
+
+    <TextView
+        android:id="@+id/paasttext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="Past Ride"
+        app:layout_constraintBottom_toBottomOf="@+id/pastride"
+        app:layout_constraintEnd_toStartOf="@+id/pastride"
+        app:layout_constraintTop_toTopOf="@+id/pastride" />
+
+    <TextView
+        android:id="@+id/upcomingtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="Up Coming Ride"
+        app:layout_constraintBottom_toBottomOf="@+id/upcomingride"
+        app:layout_constraintEnd_toStartOf="@+id/upcomingride"
+        app:layout_constraintTop_toTopOf="@+id/upcomingride" />
+
+    <TextView
+        android:id="@+id/bookridetext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="Book Ride"
+        app:layout_constraintBottom_toBottomOf="@+id/f2"
+        app:layout_constraintEnd_toStartOf="@+id/f2"
+        app:layout_constraintTop_toTopOf="@+id/f2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
