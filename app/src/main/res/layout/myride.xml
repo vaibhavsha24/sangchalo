@@ -24,18 +24,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:text="From :"
         android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/bc"
-        app:layout_constraintTop_toBottomOf="@+id/ridername" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:text="To :"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/textView5"
@@ -45,40 +45,39 @@
         android:id="@+id/Status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="80dp"
+        android:layout_marginEnd="10dp"
         android:text="Status:"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/time" />
+        app:layout_constraintEnd_toStartOf="@+id/Statuscheck"
+        app:layout_constraintTop_toTopOf="@+id/Statuscheck" />
 
     <TextView
         android:id="@+id/Statuscheck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
         android:text="TextView"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/Status"
-        app:layout_constraintTop_toBottomOf="@+id/datemid" />
+        app:layout_constraintTop_toBottomOf="@+id/timemride" />
 
     <TextView
         android:id="@+id/Fromride"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:text="TextView"
         android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/ridername" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tomride"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:text="TextView"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/Fromride"

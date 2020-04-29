@@ -3,55 +3,60 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/toid"
+        android:id="@+id/toupcomingid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         android:text="To:"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></TextView>
+        app:layout_constraintTop_toBottomOf="@+id/Nameid" />
 
     <TextView
-        android:id="@+id/fromid"
+        android:id="@+id/fromumpcomingid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="From:"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toid"></TextView>
+        app:layout_constraintTop_toBottomOf="@+id/toupcomingid" />
 
     <TextView
         android:id="@+id/Statusid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:text="Status:"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toStartOf="@+id/textView20"
-        app:layout_constraintTop_toBottomOf="@+id/estimatedamount"></TextView>
+        app:layout_constraintEnd_toStartOf="@+id/statusupcoming"
+        app:layout_constraintTop_toBottomOf="@+id/estimatedamount" />
 
     <TextView
         android:id="@+id/estimatedamount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
         android:text="Estimated Amount:"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toStartOf="@+id/textView19"
-        app:layout_constraintTop_toBottomOf="@+id/timeid"></TextView>
+        app:layout_constraintEnd_toStartOf="@+id/amountupcoming"
+        app:layout_constraintTop_toBottomOf="@+id/timeid" />
 
     <TextView
         android:id="@+id/timeid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="4dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
         android:text="Time"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toStartOf="@+id/textView18"
-        app:layout_constraintTop_toBottomOf="@+id/datemid"></TextView>
+        app:layout_constraintEnd_toStartOf="@+id/timeupcoming"
+        app:layout_constraintTop_toBottomOf="@+id/datemid" />
 
     <TextView
         android:id="@+id/datemid"
@@ -61,49 +66,50 @@
         android:layout_marginEnd="4dp"
         android:text="Date"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toStartOf="@+id/textView16"
-        app:layout_constraintTop_toTopOf="parent"></TextView>
+        app:layout_constraintEnd_toStartOf="@+id/dateupcoming"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/Nameid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="Name:"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fromid"></TextView>
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/toid"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/nameupcoming"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
         android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/fromid"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintStart_toEndOf="@+id/Nameid"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/toupcoming"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/nameupcoming"
+        app:layout_constraintTop_toBottomOf="@+id/nameupcoming" />
+
+    <TextView
+        android:id="@+id/fromupcoming"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="10dp"
         android:text="TextView"
         app:layout_constraintStart_toEndOf="@+id/Nameid"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        app:layout_constraintTop_toBottomOf="@+id/toupcoming" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/dateupcoming"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -112,28 +118,31 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView18"
+        android:id="@+id/timeupcoming"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+        app:layout_constraintTop_toBottomOf="@+id/dateupcoming" />
 
     <TextView
-        android:id="@+id/textView19"
-        android:layout_width="46dp"
-        android:layout_height="20dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
-
-    <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/amountupcoming"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+        app:layout_constraintTop_toBottomOf="@+id/timeupcoming" />
+
+    <TextView
+        android:id="@+id/statusupcoming"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/amountupcoming" />
 
     <Button
         android:id="@+id/cancleButton"
@@ -141,12 +150,12 @@
         android:layout_height="37dp"
 
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="156dp"
         android:background="@drawable/round_button"
         android:backgroundTint="@color/colorPrimary"
         android:text="Cancle ride"
         android:textColor="@color/browser_actions_bg_grey"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Statusid" />
 
 

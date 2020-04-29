@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_pastrides.*
 import kotlinx.android.synthetic.main.activity_upcomming.*
 
-class upcomming : AppCompatActivity() {
+class Upcomming : AppCompatActivity() {
     private lateinit var rideAdapter:upcommingAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {

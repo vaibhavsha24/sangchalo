@@ -50,17 +50,17 @@ class upcommingAdapter(val upcomming: ArrayList<upcommingclass>) : RecyclerView.
 
         fun bindItems(ride: upcommingclass,listener:OnItemClickListener) {
 
-            itemView.Fromid.text=ride.from
+            itemView.fromupcoming.text=ride.from
 
-            itemView.toid.text=ride.to
+            itemView.toupcoming.text=ride.to
 
-            itemView.datemid.text=ride.date
+            itemView.dateupcoming.text=ride.date
 
-            itemView.timeid.text=ride.time
+            itemView.timeupcoming.text=ride.time
 
-            itemView.estimatedamount.text=ride.estimatedamount
-            itemView.Statusid.text=ride.status
-            itemView.nameid.text=ride.name
+            itemView.amountupcoming.text=ride.estimatedamount
+            itemView.statusupcoming.text=ride.status
+            itemView.nameupcoming.text=ride.name
 
         }
 
