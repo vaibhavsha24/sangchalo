@@ -5,8 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.pastride.view.*
-import kotlinx.android.synthetic.main.pastride.view.datemid
-import kotlinx.android.synthetic.main.pastride.view.*
+import kotlinx.android.synthetic.main.pastride.view.datempastid
 
 class pastridesAdapter(val pastrides: ArrayList<pastridesclass>) : RecyclerView.Adapter<pastridesAdapter.ViewHolder>() {
 
@@ -47,17 +46,17 @@ class pastridesAdapter(val pastrides: ArrayList<pastridesclass>) : RecyclerView.
 
         fun bindItems(ride: pastridesclass,listener:OnItemClickListener) {
 
-            itemView.Fromid.text=ride.from
+            itemView.Frompastid.text=ride.from
 
-            itemView.toid.text=ride.to
+            itemView.topastid.text=ride.to
 
-            itemView.datemid.text=ride.date
+            itemView.datempastid.text=ride.date
 
-            itemView.timeid.text=ride.time
+            itemView.timepastid.text=ride.time
 
-            itemView.Amountid.text=ride.Amount
-            itemView.Statusid.text=ride.status
-            itemView.nameid.text=ride.name
+            itemView.Amountpastid.text=ride.Amount
+            itemView.Statuspastid.text=ride.status
+            itemView.namepastid.text=ride.name
 
         }
 

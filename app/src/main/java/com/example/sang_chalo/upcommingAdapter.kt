@@ -4,11 +4,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.pastride.view.*
-import kotlinx.android.synthetic.main.pastride.view.Statusid
-import kotlinx.android.synthetic.main.pastride.view.datemid
-import kotlinx.android.synthetic.main.pastride.view.timeid
-import kotlinx.android.synthetic.main.pastride.view.toid
 import kotlinx.android.synthetic.main.upcomming.view.*
 
 class upcommingAdapter(val upcomming: ArrayList<upcommingclass>) : RecyclerView.Adapter<upcommingAdapter.ViewHolder>() {

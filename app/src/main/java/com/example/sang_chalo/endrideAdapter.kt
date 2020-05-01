@@ -56,7 +56,7 @@ class endrideAdapter(val EndRide: ArrayList<endrideclass>) : RecyclerView.Adapte
                 itemView.rateperkm.text=rider.rate
                 itemView.totalfare.text=rider.totalfare
                 itemView.swipeend.setOnStateChangeListener {
-                    itemView.context.startActivity(Intent(itemView.context,RideStarted::class.java))
+                    itemView.context.startActivity(Intent(itemView.context,Home::class.java))
                 }
 
 

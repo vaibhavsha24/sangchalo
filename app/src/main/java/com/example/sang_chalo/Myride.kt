@@ -27,6 +27,7 @@ class Myride : AppCompatActivity() {
     ride.date="2/20/2020"
 
     ride.time="10:00"
+    ride.status="pending"
 
     myride.add(ride)
     //var ride1=myrideclass()

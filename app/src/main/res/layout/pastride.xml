@@ -7,79 +7,79 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/datemid"
+        android:id="@+id/datempastid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="5dp"
-        android:text="DATE"
+        android:text="DATE:"
         android:textColor="@color/black"
         app:layout_constraintEnd_toStartOf="@+id/textView3"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/toid"
-        android:layout_width="18dp"
-        android:layout_height="20dp"
+        android:id="@+id/topastid"
+        android:layout_width="22dp"
+        android:layout_height="19dp"
         android:layout_marginTop="10dp"
-        android:text="To"
+        android:text="To:"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/Fromid"
+        android:id="@+id/Frompastid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="From"
+        android:text="From:"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toid" />
+        app:layout_constraintTop_toBottomOf="@+id/topastid" />
 
     <TextView
-        android:id="@+id/timeid"
+        android:id="@+id/timepastid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
-        android:text="Time"
+        android:text="Time:"
         android:textColor="@color/black"
         app:layout_constraintEnd_toStartOf="@+id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/datemid" />
+        app:layout_constraintTop_toBottomOf="@+id/datempastid" />
 
 
     <TextView
-        android:id="@+id/Statusid"
+        android:id="@+id/Statuspastid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
-        android:text="Status"
+        android:text="Status:"
         android:textColor="@color/black"
         app:layout_constraintEnd_toStartOf="@+id/textView13"
-        app:layout_constraintTop_toBottomOf="@+id/Amountid" />
+        app:layout_constraintTop_toBottomOf="@+id/Amountpastid" />
 
     <TextView
-        android:id="@+id/nameid"
+        android:id="@+id/namepastid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="Name"
+        android:text="Name:"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Fromid" />
+        app:layout_constraintTop_toBottomOf="@+id/Frompastid" />
 
     <TextView
-        android:id="@+id/Amountid"
+        android:id="@+id/Amountpastid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
-        android:text="Amount"
+        android:text="Amount:"
         android:textColor="@color/black"
         app:layout_constraintEnd_toStartOf="@+id/textView11"
-        app:layout_constraintTop_toBottomOf="@+id/timeid" />
+        app:layout_constraintTop_toBottomOf="@+id/timepastid" />
 
     <TextView
         android:id="@+id/textView3"
@@ -97,7 +97,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="TextView"
-        app:layout_constraintLeft_toRightOf="@+id/toid"
+        app:layout_constraintLeft_toRightOf="@+id/topastid"
         app:layout_constraintStart_toStartOf="@+id/textView12"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -137,7 +137,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="4dp"
         android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/nameid"
+        app:layout_constraintStart_toEndOf="@+id/namepastid"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <TextView

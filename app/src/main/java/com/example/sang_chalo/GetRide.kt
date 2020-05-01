@@ -5,9 +5,7 @@ import android.app.TimePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_choose.*
 import kotlinx.android.synthetic.main.activity_get_ride.*
-import java.sql.Time
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -37,10 +35,10 @@ class GetRide : AppCompatActivity() {
         val timepicker=TimePickerDialog.OnTimeSetListener{timePicker, hour, minute ->
         c.set(Calendar.HOUR_OF_DAY, hour)
         c.set(Calendar.MINUTE, minute)
-        timeid.text = SimpleDateFormat("HH:mm").format(c.time)
+        timepastid.text = SimpleDateFormat("HH:mm").format(c.time)
     }
 
-        timeid.setOnClickListener{
+        timepastid.setOnClickListener{
             TimePickerDialog(this, timepicker, c.get(Calendar.HOUR_OF_DAY), c.get(Calendar.MINUTE), true).show()
 
 

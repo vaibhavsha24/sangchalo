@@ -1,5 +1,6 @@
 package com.example.sang_chalo
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -49,9 +50,13 @@ class myrideAdapter(val myride: ArrayList<Myrideclass>) : RecyclerView.Adapter<m
 
             itemView.tomride.text=rider.to
 
-            itemView.datemid.text=rider.date
+            itemView.datempastid.text=rider.date
 
             itemView.timemride.text=rider.time
+             itemView.Statuscheck.text=rider.status
+            itemView.startridebitton.setOnClickListener {
+                itemView.context.startActivity(Intent(itemView.context,Home::class.java))
+            }
 
         }
 

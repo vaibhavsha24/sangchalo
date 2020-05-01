@@ -18,7 +18,6 @@ import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.google.android.gms.common.api.Status
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -32,8 +31,6 @@ import com.google.android.libraries.places.api.Places
 import com.google.android.libraries.places.api.model.Place
 import com.google.android.libraries.places.widget.Autocomplete
 import com.google.android.libraries.places.widget.AutocompleteActivity
-import com.google.android.libraries.places.widget.AutocompleteSupportFragment
-import com.google.android.libraries.places.widget.listener.PlaceSelectionListener
 import com.google.android.libraries.places.widget.model.AutocompleteActivityMode
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.activity_home.*
@@ -251,9 +248,14 @@ var AUTOCOMPLETE_REQUEST_CODE=2
         Getridebutton.setOnClickListener {
             startActivity(Intent(this,GetRide::class.java))
         }
+
+        endridenavigator.setOnClickListener {
+            startActivity(Intent(this,RideStarted::class.java))
+        }
+
        var fields = Arrays.asList(Place.Field.ID, Place.Field.NAME) as  List<Place.Field>
 // Start the autocomplete intent.
-            Fromid.addTextChangedListener(object:TextWatcher{
+            Frompastid.addTextChangedListener(object:TextWatcher{
 
                 override fun afterTextChanged(p0: Editable?) {
 
@@ -271,7 +273,7 @@ var AUTOCOMPLETE_REQUEST_CODE=2
                 }
             })
 
-        Fromid.setOnClickListener {
+        Frompastid.setOnClickListener {
 
             var intent =  Autocomplete.IntentBuilder(
                 AutocompleteActivityMode.OVERLAY, fields)

@@ -27,7 +27,7 @@
         app:layout_constraintTop_toBottomOf="@+id/toupcomingid" />
 
     <TextView
-        android:id="@+id/Statusid"
+        android:id="@+id/Statuspastid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -45,10 +45,10 @@
         android:text="Estimated Amount:"
         android:textColor="@color/black"
         app:layout_constraintEnd_toStartOf="@+id/amountupcoming"
-        app:layout_constraintTop_toBottomOf="@+id/timeid" />
+        app:layout_constraintTop_toBottomOf="@+id/timepastid" />
 
     <TextView
-        android:id="@+id/timeid"
+        android:id="@+id/timepastid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -56,10 +56,10 @@
         android:text="Time"
         android:textColor="@color/black"
         app:layout_constraintEnd_toStartOf="@+id/timeupcoming"
-        app:layout_constraintTop_toBottomOf="@+id/datemid" />
+        app:layout_constraintTop_toBottomOf="@+id/datempastid" />
 
     <TextView
-        android:id="@+id/datemid"
+        android:id="@+id/datempastid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -156,7 +156,7 @@
         android:textColor="@color/browser_actions_bg_grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Statusid" />
+        app:layout_constraintTop_toBottomOf="@+id/Statuspastid" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

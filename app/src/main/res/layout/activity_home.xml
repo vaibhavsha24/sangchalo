@@ -42,7 +42,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
-            android:id="@+id/Fromid"
+            android:id="@+id/Frompastid"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:ems="10"
@@ -206,9 +206,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
-        android:visibility="invisible"
-
         android:text="Past Ride"
+
+        android:textColor="@color/choose"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/pastride"
         app:layout_constraintEnd_toStartOf="@+id/pastride"
         app:layout_constraintTop_toTopOf="@+id/pastride" />
@@ -217,10 +218,11 @@
         android:id="@+id/upcomingtext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="invisible"
-
         android:layout_marginEnd="10dp"
+
         android:text="Up Coming Ride"
+        android:textColor="@color/choose"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/upcomingride"
         app:layout_constraintEnd_toStartOf="@+id/upcomingride"
         app:layout_constraintTop_toTopOf="@+id/upcomingride" />
@@ -231,10 +233,24 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
         android:text="Book Ride"
-        android:visibility="invisible"
+        android:textColor="@color/choose"
 
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/f2"
         app:layout_constraintEnd_toStartOf="@+id/f2"
         app:layout_constraintTop_toTopOf="@+id/f2" />
+
+    <Button
+        android:id="@+id/endridenavigator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="End rides"
+        android:textColor="@color/browser_actions_bg_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
