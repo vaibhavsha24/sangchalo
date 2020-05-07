@@ -1,10 +1,12 @@
 package com.example.sang_chalo
 
 import android.content.Intent
+import android.preference.PreferenceManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.myride.view.*
 
 class myrideAdapter(val myride: ArrayList<Myrideclass>) : RecyclerView.Adapter<myrideAdapter.ViewHolder>() {
@@ -55,12 +57,22 @@ class myrideAdapter(val myride: ArrayList<Myrideclass>) : RecyclerView.Adapter<m
             itemView.timemride.text=rider.time
              itemView.Statuscheck.text=rider.status
             itemView.startridebitton.setOnClickListener {
+                savend("true")
                 itemView.context.startActivity(Intent(itemView.context,Home::class.java))
+
             }
 
         }
 
-
+        fun savend(list: String) {
+            val prefs = PreferenceManager.getDefaultSharedPreferences(itemView.context)
+            val editor = prefs.edit()
+            val gson = Gson()
+            val json = gson.toJson(list)
+            editor.putString("Ride", json)
+            editor.apply()     // This line is IMPORTANT !!!
+            println("cartlist stored succesfully")
+        }
 
     }
 

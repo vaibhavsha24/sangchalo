@@ -10,6 +10,7 @@ import android.location.LocationManager
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
@@ -33,6 +34,8 @@ import com.google.android.libraries.places.widget.Autocomplete
 import com.google.android.libraries.places.widget.AutocompleteActivity
 import com.google.android.libraries.places.widget.model.AutocompleteActivityMode
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.activity_home.*
 import java.util.*
 
@@ -151,7 +154,7 @@ var AUTOCOMPLETE_REQUEST_CODE=2
 //        });
         profile.setOnClickListener {
 
-            startActivity(Intent(this,RideStarted::class.java))
+            startActivity(Intent(this,Details::class.java))
         }
 
 
@@ -249,6 +252,15 @@ var AUTOCOMPLETE_REQUEST_CODE=2
             startActivity(Intent(this,GetRide::class.java))
         }
 
+        if(getend().toString().equals("true"))
+        {
+            endridenavigator.visibility=View.VISIBLE
+        }
+        else
+        {
+            endridenavigator.visibility=View.INVISIBLE
+
+        }
         endridenavigator.setOnClickListener {
             startActivity(Intent(this,RideStarted::class.java))
         }
@@ -364,4 +376,30 @@ fun closeFABMenu(){
     fab2.animate().translationY(0.toFloat());
     fab3.animate().translationY(0.toFloat());
 }
+    private fun getend():String
+    {
+        try {
+
+            val prefs = PreferenceManager.getDefaultSharedPreferences(this)
+            val gson = Gson()
+            val json = prefs.getString("Ride", "false")
+            val type = object : TypeToken<String>() {
+
+            }.type
+            if(json!=null) {
+                return gson.fromJson(json, type)
+            }
+            else
+            {
+
+            }
+        }catch (e: Exception)
+        {
+            println(e)
+        }
+        return "String"
+    }
+
+
+
 }

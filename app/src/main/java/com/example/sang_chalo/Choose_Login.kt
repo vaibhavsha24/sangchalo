@@ -138,14 +138,14 @@ class Choose_Login : AppCompatActivity(),View.OnClickListener {
                phone.visibility=View.INVISIBLE
                 verificationcode.visibility=View.VISIBLE
 
-                startActivity(Intent(this,SignIn::class.java))
+//                startActivity(Intent(this,SignIn::class.java))
 
-//                startPhoneNumberVerification(phoneno)
+                startPhoneNumberVerification(phoneno)
 
-//                next.setOnClickListener {
-//
-//                    verifyPhoneNumberWithCode(storedVerificationId,verificationcode.text.toString())
-//                    }
+                next.setOnClickListener {
+
+                    verifyPhoneNumberWithCode(storedVerificationId,verificationcode.text.toString())
+                    }
             }
 
 
@@ -180,6 +180,8 @@ class Choose_Login : AppCompatActivity(),View.OnClickListener {
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     Log.e("Login", "signInWithCredential:success")
+                    startActivity(Intent(this,SignIn::class.java))
+
                     val user = auth.currentUser
                     updateUI(user)
                 } else {
@@ -257,6 +259,7 @@ class Choose_Login : AppCompatActivity(),View.OnClickListener {
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     Log.e("sucess", "signInWithCredential:success")
+                    startActivity(Intent(this,SignIn::class.java))
 
                     val user = task.result?.user
                     // [START_EXCLUDE]
