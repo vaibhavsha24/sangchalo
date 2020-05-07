@@ -44,6 +44,7 @@ class Choose_Login : AppCompatActivity(),View.OnClickListener {
 
         auth = FirebaseAuth.getInstance()
 
+
         signInButton.setOnClickListener(this)
         signInButton.setOnClickListener({
             signIn()

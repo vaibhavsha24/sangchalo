@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
     private val REQUEST_CODE_ASK_PERMISSIONS = 1
@@ -39,7 +40,14 @@ class MainActivity : AppCompatActivity() {
                 } finally {
                     println("here")
                   try {
-                      startActivity(Intent(this@MainActivity, Choose_Login::class.java))
+                      if(FirebaseAuth.getInstance().currentUser!=null)
+                      {
+                          startActivity(Intent(this@MainActivity,SignIn::class.java))
+                          finish()
+                      }
+                      else {
+                          startActivity(Intent(this@MainActivity, Choose_Login::class.java))
+                      }
                   }catch (e:Exception)
                   {
                       println(e.toString())
